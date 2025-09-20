@@ -74,10 +74,27 @@ img {
     background-color: #b3fefd;
 }
 
+#spring1 {
+    background-color: #f1b8f5;
+}
+
+#summer1 {
+    background-color: #c3f5b8;
+}
+
+#autunm1 {
+    background-color: #eed09c;
+}
+
+#winter1 {
+    background-color: #b3fefd;
+}
+
 figcaption {
     line-height: 40px;
     text-align: center;
     margin-inline-end: 12rem;
 }
+
 
 
