@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Webpage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        footer {
+            margin-top: 30rem;
+            text-align: center;
+            margin-inline-end: 0rem;
+            margin-inline-start: 0rem;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-sm text-center">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800">Welcome</h1>
+        <p class="text-gray-600 mb-8">Choose a background to explore.</p>
+        <div class="space-y-4">
+            <a href="anime-seasonal-background.html" class="block w-full">
+                <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                    Anime Background
+                </button>
+            </a>
+            <a href="natural-wonders-background.html" class="block w-full">
+                <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                    Natural Wonders
+                </button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

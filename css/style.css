@@ -1,0 +1,83 @@
+/*
+ * This stylesheet provides basic styling for a multi-page website
+ * and includes responsive rules for images.
+ */
+
+/* Style for the body tag to modify font family and font size */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Style for the header tag to modify background color */
+header {
+    background-color: #e0fae0;
+}
+
+/* Style for the nav tag to modify background color */
+nav {
+    background-color: #fcd7b3;
+}
+
+/* Style for the main tag to modify background color and font size */
+main {
+    background-color: #ffffff;
+    font-size: 18px;
+}
+
+/* Style for the footer tag to modify background color */
+footer {
+    background-color: #e0f7fa;
+}
+
+/* Style for the li tag to modify display and width */
+li {
+    display: inline-block;
+    width: 150px;
+}
+
+/* Style for the h1 tag to modify text alignment, font family, and color */
+h1 {
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #01579b;
+}
+
+/* Style for the p tag to modify line height */
+p {
+    line-height: 1.6;
+}
+
+/*
+ * Rule to make images responsive.
+ * It ensures the image scales down to fit its container without stretching.
+ */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes any default spacing below the image */
+}
+
+#spring {
+    background-color: #f1b8f5;
+}
+
+#summer {
+    background-color: #c3f5b8;
+}
+
+#autunm {
+    background-color: #eed09c;
+}
+
+#winter {
+    background-color: #b3fefd;
+}
+
+figcaption {
+    line-height: 40px;
+    text-align: center;
+    margin-inline-end: 12rem;
+}
+
+
