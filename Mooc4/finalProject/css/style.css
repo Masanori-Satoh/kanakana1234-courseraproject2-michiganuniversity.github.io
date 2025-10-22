@@ -1,0 +1,195 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    /* merged from gallery.css: subtle gradient background and border */
+    margin: 2%;
+    border: 4px solid rgb(254, 254, 254);
+    background-image: linear-gradient(to bottom, #75add0, #e0a8cd);
+    padding: 5px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family:Arial, sans-serif;
+    font-size: 1.95em;
+}
+
+h2{
+    text-align:center;
+  }
+
+li{
+    margin-top: 20px;
+}
+
+/* Global img defaults: keep visual properties but do not fix size here
+   (sizes are controlled by .grid figure to make scaling predictable) */
+img {
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    margin: 0px;
+    border-radius: 4%;
+    opacity: 0.6;
+    background: #ffffff;
+    transition: opacity 0.2s linear, transform 0.25s ease;
+}
+
+/* specific large display container from gallery.css (optional usage) */
+#image{
+    width:  50%;
+    height: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    margin: 0px;
+    border-radius: 4%;
+    opacity: 60%;
+    background: #ffffff;
+    transition: opacity 0.2s linear, tranform 1s linear;
+    transition-delay: .5s;
+    background-size: 100%;
+    margin-bottom:25px;
+    margin-top: 10px;
+    font-size: 150%;
+}
+
+.preview{
+    width:10%;
+    margin-left:17%;
+    border: 4px solid #ffffff;
+}
+
+.label{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Mobile-first grid: one column, 10px gap both row and column */
+.grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.grid figure{
+    margin: 0;
+    background: #fff;
+    border: 4px solid #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    display: block;
+}
+
+.grid figcaption{
+    padding: 10px;
+    font-size: 0.95rem;
+    background: transparent;
+    color: #111;
+    text-align: center;
+}
+
+/* Image presentation styles (from style-v2_5.css) */
+.grid figure{
+    position: relative; /* allow absolute children if needed for exact fit */
+}
+
+.grid figure img{
+    /* mobile-first: full width, fixed visual height for consistent tiles */
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border: none; /* figure already has a border */
+    margin: 0;
+    border-radius: inherit;
+    opacity: 0.98;
+    background: #ffffff;
+    transition: opacity 0.2s linear, transform 0.25s ease;
+    display: block;
+}
+
+.grid figure img:hover{
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+/* Tablet: ensure images fill the circular figure completely */
+/* Tablet view: at 772px — two column grid, circular figures, last figure spans both columns */
+@media (min-width: 772px){
+    .grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .grid figure{
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+        padding: 0; /* ensure circular crop */
+    }
+
+    /* Make images and captions fit inside the circular figure */
+    .grid figure img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    /* Last figure spans both columns */
+    .grid figure:last-of-type{
+        grid-column: 1 / -1;
+        border-radius: 50%;
+        /* make last figure taller as a visual feature */
+        grid-row: auto;
+    }
+}
+
+/* Large screens: at 992px — every 3rd figure should span both columns; remove border-radius */
+@media (min-width: 992px){
+    .grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    /* remove circular shape on large screens */
+    .grid figure,
+    .grid figure img{
+        border-radius: 6px;
+        aspect-ratio: auto;
+    }
+
+    /* every 3rd figure (3,6,9,...) spans both columns and is larger */
+    .grid figure:nth-of-type(3n){
+        grid-column: 1 / -1;
+    }
+
+    /* make spanning figures visually larger */
+    .grid figure:nth-of-type(3n) img{
+        height: 340px;
+    }
+}
+
+/* Respect users who prefer reduced motion: remove smooth scrolling */
+@media (prefers-reduced-motion: reduce){
+    html{
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark color scheme adjustments */
+@media (prefers-color-scheme: dark){
+    body{
+        background-image: linear-gradient(to bottom, #003150, #41012c);
+        color: #e8e2b2; /* slightly yellow-ish light text on dark bg */
+    }
+
+    .grid figure{
+        background-color: #1e1e1e; /* dark figure background */
+        color: #f5e68a; /* lighter/yellow-ish caption color */
+        border-color: #000; /* black border */
+    }
+
+    .grid figcaption{
+        color: #f5e68a;
+    }
+}
